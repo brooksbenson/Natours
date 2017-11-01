@@ -1,0 +1,14 @@
+{
+  "name": "Natours",
+  "version": "1.0.0",
+  "description": "A follow along project provided by Jonas Schmedtmann in his Advances CSS and Sass course",
+  "main": "index.js",
+  "author": "Brooks Benson",
+  "license": "MIT",
+  "scripts": {
+    "live": "live-server"
+  },
+  "dependencies": {
+    "live-server": "^1.2.0"
+  }
+}
