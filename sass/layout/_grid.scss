@@ -1,7 +1,7 @@
 .row {
     margin: 0 auto;
     width: $grid-width;
-    background-color: #eee;
+    list-style: none;
 
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
@@ -10,7 +10,6 @@
     @include clearfix;
 
     [class^="col-"] {
-        background-color: orangered;
         float: left;
 
         &:not(:last-child) {

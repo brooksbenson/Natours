@@ -1,0 +1,47 @@
+.header {
+    position: relative;
+    height: 95vh;
+    @include main-background-theme($header-background-image);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+.section-about {
+    background-color: $color-light-grey-1;
+    padding: 25rem 0;
+    margin-top: -20vh;
+}
+
+.section-features {
+    padding: 20rem 0;
+    @include main-background-theme($features-background-image);
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    & > * {
+        transform: skewY(7deg);
+    }
+}
+
+.section-tours {
+    background-color: $color-light-grey-1;
+    margin-top: -10rem;
+    padding: 25rem 0 50rem;
+}

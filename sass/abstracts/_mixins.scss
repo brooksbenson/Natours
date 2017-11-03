@@ -3,3 +3,26 @@
     display: table;
     clear: both;
 }
+
+@mixin btn-transitions {
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+}
+
+@mixin main-background-theme($image) {
+    background-image: 
+        linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+        url(#{$image});
+    background-size: cover;
+    background-position: top;
+}
+
+@mixin font-color-gradient {
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+}
