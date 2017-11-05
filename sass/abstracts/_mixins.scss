@@ -4,12 +4,6 @@
     clear: both;
 }
 
-@mixin btn-transitions {
-    transition: all .2s;
-    position: relative;
-    font-size: 1.6rem;
-}
-
 @mixin main-background-theme($image) {
     background-image: 
         linear-gradient(
@@ -22,7 +16,8 @@
 }
 
 @mixin font-color-gradient {
-    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    background-image: 
+        linear-gradient(to right, $color-primary-light, $color-primary-dark);
     -webkit-background-clip: text;
     color: transparent;
 }
