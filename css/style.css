@@ -529,8 +529,6 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
-  transition: opacity .8s;
   width: 100%;
   z-index: 1001; }
 
@@ -538,10 +536,11 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(150%, -200%);
+  opacity: 0;
   list-style: none;
   text-align: center;
-  width: 100%; }
+  transition: all .8s; }
 
 .navigation__item {
   margin: 1rem; }
@@ -568,8 +567,9 @@ body {
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80); }
 
-.navigation__checkbox:checked ~ .navigation__nav {
-  display: block; }
+.navigation__checkbox:checked ~ .navigation__nav .navigation__list {
+  transform: translate(-50%, -50%);
+  opacity: 1; }
 
 .header {
   position: relative;
