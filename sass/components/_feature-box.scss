@@ -7,11 +7,20 @@
     box-shadow: 0 1.5rem 4rem rgba($color-white, .15);
     transition: transform .3s;
 
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
+
     &__icon {
         @include font-color-gradient;
         font-size: 6rem;
         margin-bottom: .5rem;
         display: inline-block;
+
+        @include respond(tab-port) {
+            margin-bottom: 0;
+        }
+
     }
 
     &:hover {

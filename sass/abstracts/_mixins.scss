@@ -21,3 +21,37 @@
     -webkit-background-clip: text;
     color: transparent;
 }
+
+// Repsonsiveness Order: 
+    //Base + Typography
+    //General Layout + Grid
+    //Page Layout
+    //Components
+@mixin respond($size) {
+    
+    @if $size == very-small {
+        @media (max-width: 420px) { @content };
+    }
+    @if $size == small {
+        @media (max-width: 500px) { @content };
+    }
+    @if $size == phone {
+        @media (max-width: 600px) { @content };
+    }
+
+    @if $size == phoneish {
+        @media (max-width: 670px) { @content };
+    }
+
+    @if $size == tab-port {
+        @media (max-width: 900px) { @content };
+    }
+
+    @if $size == tab-land {
+        @media (max-width: 1200px) { @content };
+    }
+
+    @if $size == big-desk {
+        @media (min-width: 1800px) { @content };
+    }
+}

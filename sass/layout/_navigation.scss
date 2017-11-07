@@ -15,6 +15,16 @@
         z-index: 1002;
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
         cursor: pointer;
+
+        @include respond(tab-port) {
+            top: 4rem;
+            right: 4rem;
+        }
+
+        @include respond(phone) {
+            height: 5rem;
+            width: 5rem;
+        }
     }
 
     &__background {
@@ -27,6 +37,17 @@
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000;
         transition: transform .8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+        @include respond(tab-port) {
+            top: 4.355rem;
+            right: 4.355rem;
+        }
+
+        @include respond(phone) {
+            height: 3.5rem;
+            width: 3.5rem;
+        }
+ 
     }
 
     &__nav {
@@ -45,6 +66,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 100%;
         list-style: none;
         text-align: center;
     }
@@ -59,7 +81,7 @@
             display: inline-block;
             font-size: 3rem;
             font-weight: 300;
-            padding: 1rem 2rem;
+            padding: 1rem 0;
             color: $color-white;
             text-decoration: none;
             text-transform: uppercase;
@@ -98,9 +120,10 @@
     //ICON
 
     &__icon {
-        position: relative;
-        left: 1.85rem;
-        top: 2.4rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
         &,
         &::before,
@@ -111,6 +134,11 @@
             display: inline-block;
             border-radius: 4px;
             transition: all .1s;
+
+            @include respond(phone) {
+                width: 2.5rem;
+                height: 2px;
+            }
         }
 
         &::before,
@@ -120,16 +148,37 @@
             left: 0;
         }
 
-        &::before { top: -.8rem; }
-        &::after { top: .8rem; }
+        &::before { 
+            top: -.8rem;
+            @include respond(phone) {
+                top: -.6rem;
+            }
+ 
+        }
+
+        &::after { 
+            top: .9rem;
+            @include respond(phone) {
+                top: .7rem;
+            }
+ 
+        }
     }
 
     &__button:hover &__icon::before {
         top: -.9rem;
+        @include respond(phone) {
+            top: -.5rem;
+        }
+ 
     }
 
     &__button:hover &__icon::after {
-        top: .9rem;
+        top: 1rem;
+        @include respond(phone) {
+            top: .6rem;
+        }
+ 
     }
 
     &__checkbox:checked + &__button &__icon {
