@@ -52,8 +52,10 @@
     &__copyright {
         border-top: 2px solid $color-grey;
         padding-top: 2rem;
+        padding-left: 3px;
         color: $color-light-grey-2;
         width: 80%;
+        display: inline-block;
         float: right;
     }
 }

@@ -1,0 +1,84 @@
+.popup {
+    position: fixed;
+    background-color: rgba($color-black, .9);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition-delay: .2s;
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-dark-grey;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(.5);
+        opacity: 0;
+        transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        width: 75%;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        background-color: $color-white;
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+    }
+
+    &:target &__content {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+
+    &__left {
+        width: 33.3333%;
+        display: table-cell;
+    }
+
+    &__right {
+        width: 66.66667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+    }
+    
+    &__img {
+        display: block;
+        width: 100%;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 3rem;
+
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+}
