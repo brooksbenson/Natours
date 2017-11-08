@@ -4,8 +4,12 @@
     @include main-background-theme($header-background-image);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-    @include respond(phone) {
+    @include respond(tab-port) {
         clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    @include respond(phone) {
+        clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
     }
 
     &__logo-box {
@@ -41,7 +45,7 @@
     margin-top: -20vh;
 
     @include respond(tab-port) {
-        padding: 20rem 0;
+        padding-bottom: 20rem;
         h2 { padding: 0 2.5rem; }
     }
     
