@@ -42,8 +42,13 @@
 
     @include respond(tab-port) {
         padding: 20rem 0;
+        h2 { padding: 0 2.5rem; }
     }
-
+    
+    // @include respond(phone) {
+    //     h2 {
+    //         padding: 0 1rem;
+    //     }
 }
 
 .section-features {
@@ -80,6 +85,12 @@
         padding: 10rem 0;
     }
 
+    h2 {
+        @include respond(small) {
+            padding: 0 1rem;
+        }
+    }
+
 }
 
 .section-booking {
@@ -95,12 +106,55 @@
             transparent 50%),
         url(./../img/nat-10.jpg);
     background-size: 100%;
-    height: 50rem;
+    height: 52.5rem;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
     border-radius: 3px;
+
+    @include respond(tab-land) {
+        background-image: linear-gradient(105deg,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 65%,
+            transparent 65%),
+        url(./../img/nat-10.jpg);
+        background-size: cover;
+    }
+
+    @include respond(tab-land) {
+        background-image: linear-gradient(to right,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 100%),
+        url(./../img/nat-10.jpg);
+    }
+
 
     &__form {
         width: 50%;
         padding: 6rem;
+
+        @include respond(tab-land) {
+            width: 65%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+
+            h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @include respond(small) {
+            h2 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @include respond(very-small) {
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+
     }
 }

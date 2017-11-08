@@ -28,9 +28,13 @@
     //Page Layout
     //Components
 @mixin respond($size) {
+
+    @if $size == veryvery-small {
+        @media (max-width: 400px) { @content };
+    }
     
     @if $size == very-small {
-        @media (max-width: 420px) { @content };
+        @media (max-width: 425px) { @content };
     }
     @if $size == small {
         @media (max-width: 500px) { @content };
