@@ -1,8 +1,22 @@
 .header {
     position: relative;
-    height: 95vh;
-    @include main-background-theme($header-background-image);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 85vh;
+    @include main-background-theme($header-bg-img-sm);
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); 
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); 
+        height: 95vh;
+    }
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), 
+           (min-width: 125em) {
+        @include main-background-theme($header-bg-img-lg);
+    }
+
+    @media (min-width: 2000px) {
+        @include main-background-theme($header-bg-img-lg);
+    }
 
     @include respond(tab-port) {
         clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
